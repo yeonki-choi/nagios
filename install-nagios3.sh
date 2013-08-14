@@ -1,10 +1,8 @@
 #!/bin/bash
 # Script for installing nagios-core, nagios-plugins 
+# How to run: /bin/bash install-nagios3.sh 
 # 
-# 
-# 
-# 
-# Tested Ubuntu 12.04
+# Tested on Ubuntu 12.04
 
 # Environment varibles
 DOWNLOAD_DIR="/home/${USER}/downloads"
@@ -92,7 +90,7 @@ if [ -n "${test}" ]; then
    echo "User ${nagios_user} is already on the system"
 else
    echo "Adding ${nagios_user} to system"
-   sudo useradd nagios
+   sudo adduser --disabled-password --gecos "" ${nagios_user}
 fi
 
 #read -p "Do you want to continue this? (y/n) " RESP
